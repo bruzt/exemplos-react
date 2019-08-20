@@ -3,7 +3,9 @@ import styled, { css } from 'styled-components/native';
 import { Platform } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import Geocoder from 'react-native-geocoding';
-Geocoder.init('AIzaSyBwol5k-MIJjCHuR2Lz97cjsb-6fLeVFR4');
+
+const APIKEY = require('../../env.json').APIKEY;
+Geocoder.init(APIKEY);
 
 import { getPixelSize } from "../util/utils";
 

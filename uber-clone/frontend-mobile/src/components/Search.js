@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
+const APIKEY = require('../../env.json').APIKEY;
+
 export default (props) => {
 
     const [searchFocused, setSearchFocused] = useState(false);
@@ -11,7 +13,7 @@ export default (props) => {
             placeholderTextColor='#333'
             onPress={props.onLocationSelected}
             query={{
-                key: 'AIzaSyBwol5k-MIJjCHuR2Lz97cjsb-6fLeVFR4',
+                key: APIKEY,
                 language: 'pt'
             }}
             textInputProps={{
