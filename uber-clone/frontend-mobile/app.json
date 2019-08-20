@@ -1,0 +1,40 @@
+{
+  "expo": {
+    "name": "Frontend",
+    "slug": "frontend",
+    "privacy": "public",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./src/assets/img/icon.png",
+    "splash": {
+      "image": "./src/assets/img/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bruno.teste",
+      "config": {
+        "googleMapsApiKey": "AIzaSyBwol5k-MIJjCHuR2Lz97cjsb-6fLeVFR4"
+      }
+    },
+    "android": {
+      "package": "com.bruno.teste",
+      "config": {
+        "googleMaps": { "apiKey": "AIzaSyBwol5k-MIJjCHuR2Lz97cjsb-6fLeVFR4" }
+      }
+    }
+  }
+}
