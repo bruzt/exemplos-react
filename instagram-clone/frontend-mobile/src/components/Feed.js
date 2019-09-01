@@ -79,7 +79,12 @@ class Feed extends React.Component{
                     onViewableItemsChanged={this.handleViewableChanged}
                     viewabilityConfig={{ viewAreaCoveragePercentThreshold: 20 }}
                     ListFooterComponent={(this.state.loading) && <Loading size='small' color='#999' />}
-                    renderItem={(data) => <Post data={data} shouldLoad={this.state.changed.includes(data.item.id)} />}
+                    renderItem={(data) => (
+                        <Post 
+                            data={data} 
+                            shouldLoad={this.state.changed.includes(data.item.id)}
+                        />
+                    )}
                 >
 
                 </FlatListFeed>
