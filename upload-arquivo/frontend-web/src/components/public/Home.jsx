@@ -64,7 +64,8 @@ export default class Home extends React.Component {
         const data = new FormData();
 
         data.append('file', file.file, file.name);
-
+        //console.log(data.getAll('file'))
+        console.log(file.file)
         try {
             
             const response = await api.post('/posts', data, {
