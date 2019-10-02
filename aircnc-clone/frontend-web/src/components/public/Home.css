@@ -1,0 +1,21 @@
+
+
+header {
+    border: solid 2px red;
+}
+
+nav {
+    border: solid 2px green;
+}
+
+main {
+    border: solid 2px dodgerblue;
+}
+
+#LeftPanelPublic {
+    border: solid 2px forestgreen;
+}
+
+footer {
+    border: solid 2px darkorange;
+}

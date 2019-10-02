@@ -1,0 +1,17 @@
+
+
+header {
+    border: solid 2px red;
+}
+
+nav {
+    border: solid 2px green;
+}
+
+main {
+    border: solid 2px dodgerblue;
+}
+
+footer {
+    border: solid 2px darkorange;
+}
