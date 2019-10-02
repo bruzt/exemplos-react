@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Redirect  } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Home from '../components/public/Home';
-import LoginPageOrAdminPage from '../components/admin/Login/LoginPageOrAdminPage';
+import Login from '../components/pages/Login';
+import Dashboard from '../components/pages/Dashboard';
+import NewSpot from '../components/pages/NewSpot';
 
 export default (props) => {
 
@@ -10,10 +11,9 @@ export default (props) => {
         <BrowserRouter>
             <Switch>
 
-                <Route exact path='/' component={Home} />
-                <Route path='/admin' component={LoginPageOrAdminPage} />
-
-                <Redirect from='*' to='/' />
+                <Route exact path='/' component={Login} />
+                <Route path='/dashboard' component={Dashboard} />
+                <Route path='/newspot' component={NewSpot} />
 
             </Switch>
         </BrowserRouter>

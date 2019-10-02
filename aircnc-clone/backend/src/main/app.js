@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressValidator());
-app.use(express.static(path.join(__dirname, '../views')));
+app.use('/files', express.static(path.join(__dirname, '../../uploads')));
 
 app.use(routes);
 

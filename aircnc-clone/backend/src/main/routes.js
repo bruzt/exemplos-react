@@ -18,7 +18,7 @@ router.post('/sessions', sessionController.store);
 router.get('/spots', spotController.index);
 router.post('/spots', multer(uploadConfig).single('thumbnail'), spotController.store);
 
-router.get('/dashboard', dashboardController.show);
+router.get('/dashboards', dashboardController.show);
 
 router.post('/spots/:spotId/booking', bookingController.store);
 

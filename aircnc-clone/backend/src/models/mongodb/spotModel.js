@@ -24,7 +24,15 @@ const spotSchema = mongodb.Schema({
     }
 },
 {
-    timestamps: true
+    timestamps: true,
+    toJSON: {
+        virtuals: true
+    }
+});
+
+spotSchema.virtual('thumbnail_url').get(function(){
+
+    return `http://localhost:3001/files/${this.thumbnail}`;
 });
 
 module.exports = mongodb.model('aircnc_spot', spotSchema);
