@@ -32,7 +32,7 @@ const spotSchema = mongodb.Schema({
 
 spotSchema.virtual('thumbnail_url').get(function(){
 
-    return `http://localhost:3001/files/${this.thumbnail}`;
+    return `http://192.168.1.119:3001/files/${this.thumbnail}`;
 });
 
 module.exports = mongodb.model('aircnc_spot', spotSchema);

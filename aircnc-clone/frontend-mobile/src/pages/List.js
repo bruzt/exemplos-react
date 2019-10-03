@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { AsyncStorage, Platform } from 'react-native';
+import { AsyncStorage, Platform, ScrollView } from 'react-native';
 import styled from 'styled-components/native';
 
 import SpotList from '../components/SpotList';
@@ -20,15 +20,18 @@ export default function(props) {
         });
 
     }, []);
+
  
     return (
         <Container>
 
             <Logo source={logoImage} />
 
-            {techsState.map((tech, index) => {
-                return <SpotList key={index} tech={tech} />
-            })}
+            <ScrollView>
+                {techsState.map((tech, index) => {
+                    return <SpotList key={index} tech={tech} />
+                })}
+            </ScrollView>
 
         </Container>
     );
