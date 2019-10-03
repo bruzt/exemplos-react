@@ -1,39 +1,15 @@
-import { createDrawerNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
-import Home from '../components/Home';
-import StackScreen from '../components/StackScreen';
+import Login from '../pages/Login';
+import List from '../pages/List';
+import Book from '../pages/Book';
 
-const mainRoute = createDrawerNavigator({
+const Routes = createAppContainer(
+    createSwitchNavigator({
+        Login,
+        List,
+        Book
+    })
+);
 
-    Home: {
-        screen: Home,
-        navigationOptions: {
-            title: 'Home'
-        }
-    },
-
-});
-
-const stackRoute = createStackNavigator({
-
-    Home: {
-        screen: mainRoute,
-        navigationOptions: {
-            header: null
-        }
-    },
-
-    StackScreen: {
-        screen: StackScreen,
-        navigationOptions: {
-            title: 'Stack'
-        }
-    },
-
-}, {
-    initialRouteName: 'Home'
-});
-
-
-
-export default createAppContainer(stackRoute);
+export default Routes;

@@ -1,2 +1,5 @@
 node_modules/
 env.json
+
+/aircnc-clone/backend/uploads/*
+!/aircnc-clone/backend/uploads/.gitkeep

@@ -29,7 +29,7 @@ export default function(props) {
 
         data.append('thumbnail', stateThumbnail);
         data.append('company', stateCompany);
-        data.append('techs', stateTechs);
+        data.append('techs', stateTechs.toLowerCase());
         data.append('price', statePrice);
 
         await api.post('/spots', data, {

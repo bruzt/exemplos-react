@@ -6,7 +6,6 @@ import { SplashScreen } from 'expo';
 import store from '../redux/store';
 
 import Routes from './Routes';
-import AlertMessage from '../components/common/AlertMessage';
 
 export default function App(props){
 
@@ -45,8 +44,6 @@ export default function App(props){
             {(fontsLoaded) && (
 
                 <Provider store={store}>
-
-                    <AlertMessage />
 
                     <Routes />
 
