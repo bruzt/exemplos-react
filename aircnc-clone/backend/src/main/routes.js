@@ -9,6 +9,8 @@ const sessionController = require('../controllers/sessionController');
 const spotController = require('../controllers/spotController');
 const dashboardController = require('../controllers/dashboardController');
 const bookingController = require('../controllers/bookingController');
+const approvalController = require('../controllers/approvalController');
+const rejectionController = require('../controllers/rejectionController');
 
 //////////// ROTAS //////////////
 
@@ -21,6 +23,10 @@ router.post('/spots', multer(uploadConfig).single('thumbnail'), spotController.s
 router.get('/dashboards', dashboardController.show);
 
 router.post('/spots/:spotId/booking', bookingController.store);
+
+router.post('/bookings/:booking_id/approvals', approvalController.store);
+
+router.post('/bookings/:booking_id/rejections', rejectionController.store);
 
 /////////////////////////////////
 

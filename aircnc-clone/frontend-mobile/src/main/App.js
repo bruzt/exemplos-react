@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Provider } from 'react-redux';
 import * as Font from 'expo-font';
 import { SplashScreen } from 'expo';
-
-import store from '../redux/store';
+import { YellowBox } from 'react-native';
 
 import Routes from './Routes';
 
 export default function App(props){
 
     SplashScreen.preventAutoHide();
+
+    YellowBox.ignoreWarnings([
+        'Unrecognized WebSocket connection option(s)'
+    ]);
 
     const [fontsLoaded, setFontsLoaded] = useState(false);
 
@@ -43,12 +45,7 @@ export default function App(props){
 
             {(fontsLoaded) && (
 
-                <Provider store={store}>
-
-                    <Routes />
-
-                </Provider>
-
+                <Routes />
             )}
 
         </React.Fragment>

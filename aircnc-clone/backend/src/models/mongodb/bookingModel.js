@@ -24,4 +24,4 @@ const bookingSchema = mongodb.Schema({
     timestamps: true
 });
 
-module.exports = mongodb.model('aircnc_booking', bookingSchema);
+module.exports = mongodb.model('aircnc_bookings', bookingSchema);
