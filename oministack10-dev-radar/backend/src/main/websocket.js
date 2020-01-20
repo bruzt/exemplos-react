@@ -59,7 +59,7 @@ exports.findConnections = async (coordinates, techs) => {
     
             const dev = JSON.parse(await redis.get(key));
     
-            if(calculateDistance(coordinates, dev.coordinates) < 10 
+            if(calculateDistance(coordinates, dev.coordinates) < 10 // 10km
             && dev.techs.some( (item) => techs.includes(item))){
     
                 return true;
@@ -73,10 +73,10 @@ exports.findConnections = async (coordinates, techs) => {
     }
 }
 
-exports.sendMessage = (to, key, data) => {
+exports.sendMessage = (socketKeyArray, messageKey, data) => {
 
-    to.forEach( (connection) => {
+    socketKeyArray.forEach( (socketKey) => {
         
-        io.to(connection).emit(key, data);
+        io.to(socketKey).emit(messageKey, data);
     });
 }
