@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
+header, main, footer {
+    text-align: center;
+}
+
+header, .form, main {
+    margin: 0 auto 70px auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+header p {
+    line-height: 30px;
+}
+
+header img.logo {
+    margin: 70px 0;
+    width: 150px;
+}
+
+header button {
+    margin: 16px 0 0 0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    background: #ff4f4f;
+    color: white;
+    font-weight: bold;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    background-color: #ff4f4f;
+    border-radius: 6px;
+    padding: 16px 32px;
+    align-items: center;
+}
+
+.form h2 {
+    text-align: right;
+    color: #f9f9f9;
+}
+
+form input, form button {
+    width: 100%;
+    margin: 0 0 4px 0;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid #f9f9f9;
+}
+
+form input {
+    background: transparent;
+}
+
+form input::placeholder {
+    color: white;
+}
+
+header h1, main h2 {
+    margin: 0 0 70px 0;
+}
+
+main h2 span {
+    color: #ff4f4f;
+}
+
+main .donors {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.blood {
+    color: #ff4f4f;
+    font-weight: bold;
+    font-size: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.blood::before {
+    content: "";
+    background-color: #ff4f4f11;
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+
+    border-radius: 50%;
+    border-top-right-radius: 0;
+
+    transform: rotate(-45deg);
+}
+
+.donor p {
+    margin: 24px 0 0 0;
+    font-size: 14px;
+}
+
+footer {
+    margin: 0 0 auto 0;
+    padding: 16px 0;
+    border-top: 1px solid #eeee;
+}
+
+/* js functions */
+
+section.form {
+    transition: all 300ms;
+}
+
+section.form.hide {
+    /*display: none;*/
+    
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin-top: -70px;    
+}
