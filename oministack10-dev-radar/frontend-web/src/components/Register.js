@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 export default function Register(props) {
 
@@ -18,8 +19,19 @@ export default function Register(props) {
                 props.setLongitude(position.coords.longitude);
 
             },
-            err => {
+            async err => {
                 console.log(err);
+
+                try {
+                    
+                    const position = await axios.get('https://ipinfo.io/geo');
+    
+                    props.setLatitude(position.data.loc[0]);
+                    props.setLongitude(position.data.loc[1]);
+
+                } catch (error) {
+                    console.error(error);
+                }
             }, {
             timeout: 30000
         });

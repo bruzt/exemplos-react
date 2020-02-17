@@ -20,6 +20,19 @@ export default function Home() {
 
     }, []);
 
+    async function getDevs(){
+
+        try {
+
+            const response = await api.get('/devs');
+
+            setDevs(response.data);
+            
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    
     async function handleAddDevs(event){
 
         event.preventDefault();
@@ -43,18 +56,6 @@ export default function Home() {
         }
     }
 
-    async function getDevs(){
-
-        try {
-
-            const response = await api.get('/devs');
-
-            setDevs(response.data);
-            
-        } catch (error) {
-            console.error(error);
-        }
-    }
 
     return (
         <Container>
