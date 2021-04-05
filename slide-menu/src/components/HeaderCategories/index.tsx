@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 import { randomBytes } from 'crypto';
+import ClickAwayListener from 'react-click-away-listener';
 
 import { Container } from './styles';
 
@@ -161,17 +162,19 @@ export default function Header() {
 				<GiHamburgerMenu size={30} />
 			</button>
 
-			<div className={`side-menu-container ${isSideMenuOpen ? 'open' : ''}`}>
+			<ClickAwayListener onClickAway={() => { if(isSideMenuOpen) setIsSideMenuOpen(false) }}>
+				<div className={`side-menu-container ${isSideMenuOpen ? 'open' : ''}`}>
 
-				<div className="relative-menu">
-					<div className="absolute-menu" style={{ left: `-${Number(menuIndex) * 250}px` }}>
+						<div className="relative-menu">
+							<div className="absolute-menu" style={{ left: `-${Number(menuIndex) * 250}px` }}>
 
-						{JSXCategories}
+								{JSXCategories}
 
-					</div>
+							</div>
+						</div>
+
 				</div>
-
-			</div>
+			</ClickAwayListener>
 		</Container>
 	);
 }
