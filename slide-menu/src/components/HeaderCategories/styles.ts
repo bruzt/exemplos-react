@@ -35,7 +35,7 @@ export const Container = styled.header`
 
         overflow-x: hidden;
 
-        transition: .5s;
+        transition: .3s;
 
         &.open {
             left: 0px;
@@ -54,7 +54,7 @@ export const Container = styled.header`
 
         display: flex;
 
-        transition: 0.5s;
+        transition: 0.3s;
     }
     
     .menu-section {

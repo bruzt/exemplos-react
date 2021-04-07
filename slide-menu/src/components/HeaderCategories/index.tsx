@@ -14,7 +14,7 @@ const fakeCategories = [
 	},
 	{
 		id: 2,
-		name: 'Software',
+		name: 'Periférico',
 		parante_id: 0,
 	},
 	{
@@ -37,6 +37,26 @@ const fakeCategories = [
 		name: 'Intel',
 		parante_id: 3,
 	},
+	{
+		id: 7,
+		name: 'AMD',
+		parante_id: 4,
+	},
+	{
+		id: 8,
+		name: 'Nvidia',
+		parante_id: 4,
+	},
+	{
+		id: 9,
+		name: 'Joystick/Controle',
+		parante_id: 2,
+	},
+	{
+		id: 10,
+		name: 'Mouse/Teclado',
+		parante_id: 2,
+	},
 ];
 
 export default function Header() {
@@ -55,6 +75,15 @@ export default function Header() {
 	useEffect(() => {
 		createRoot();
 	}, []);
+
+	/*useEffect(() => {
+		if(isSideMenuOpen == false){
+			setTimeout( () => {
+				setMenuIndex(0);
+				createRoot();
+			}, 300);
+		}
+	}, [isSideMenuOpen]);*/
 
 	function createRoot() {
 
@@ -87,6 +116,9 @@ export default function Header() {
 
 		const menuSection = (
 			<div key={key} className="menu-section">
+				<div>
+					<h3>Categorias</h3>
+				</div>
 				{reactRoot}
 			</div>
 		);
@@ -150,7 +182,7 @@ export default function Header() {
 			const JSXCategoriesCopy = [ ...JSXCategoriesRef.current as JSX.Element[] ];
 			JSXCategoriesCopy.pop();
 			setJSXCategories(JSXCategoriesCopy);
-		}, 500);
+		}, 300);
 	}
 
 	return (
