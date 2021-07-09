@@ -10,52 +10,52 @@ const fakeCategories = [
 	{
 		id: 1,
 		name: 'Hardware',
-		parante_id: 0,
+		parent_id: 0,
 	},
 	{
 		id: 2,
 		name: 'Periférico',
-		parante_id: 0,
+		parent_id: 0,
 	},
 	{
 		id: 3,
 		name: 'Processador',
-		parante_id: 1,
+		parent_id: 1,
 	},
 	{
 		id: 4,
 		name: 'Placa de Video',
-		parante_id: 1,
+		parent_id: 1,
 	},
 	{
 		id: 5,
 		name: 'AMD',
-		parante_id: 3,
+		parent_id: 3,
 	},
 	{
 		id: 6,
 		name: 'Intel',
-		parante_id: 3,
+		parent_id: 3,
 	},
 	{
 		id: 7,
 		name: 'AMD',
-		parante_id: 4,
+		parent_id: 4,
 	},
 	{
 		id: 8,
 		name: 'Nvidia',
-		parante_id: 4,
+		parent_id: 4,
 	},
 	{
 		id: 9,
 		name: 'Joystick/Controle',
-		parante_id: 2,
+		parent_id: 2,
 	},
 	{
 		id: 10,
 		name: 'Mouse/Teclado',
-		parante_id: 2,
+		parent_id: 2,
 	},
 ];
 
@@ -87,11 +87,11 @@ export default function Header() {
 
 	function createRoot() {
 
-		const root = categories.filter((category) => category.parante_id == 0 || category.parante_id == null);
+		const root = categories.filter((category) => category.parent_id == 0 || category.parent_id == null);
 
 		const reactRoot = root.map((rootCategory) => {
 
-			const childrens = categories.filter((category) => category.parante_id == rootCategory.id);
+			const childrens = categories.filter((category) => category.parent_id == rootCategory.id);
 			const haveChildren = childrens.length > 0 ? true : false;
 
 			return (
@@ -128,11 +128,11 @@ export default function Header() {
 
 	function createChildren(id: number) {
 
-		const children = categories.filter((category) => category.parante_id == id);
+		const children = categories.filter((category) => category.parent_id == id);
 
 		const reactChildren = children.map((childCategory) => {
 
-			const childChildrens = categories.filter((category) => category.parante_id == childCategory.id);
+			const childChildrens = categories.filter((category) => category.parent_id == childCategory.id);
 			const haveChildren = childChildrens.length > 0 ? true : false;
 
 			return (
