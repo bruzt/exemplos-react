@@ -7,7 +7,6 @@ import { Button } from "../Button";
 import { Container } from "./styles";
 
 export function ProductsWrapper() {
-  const [childNodes, setChildNodes] = useState(0);
   const [onTop, setOnTop] = useState(true);
 
   const mainRef = useRef<HTMLElement>(null);
@@ -15,8 +14,6 @@ export function ProductsWrapper() {
   useEffect(() => {
     if (mainRef.current) {
       const main = mainRef.current;
-
-      setChildNodes(main.childNodes.length);
 
       main.addEventListener("scroll", scrollListener);
 
@@ -36,6 +33,10 @@ export function ProductsWrapper() {
 
   return (
     <Container ref={mainRef}>
+      <div className={`arrow-down ${onTop ? "on-top" : ""}`}>
+        <IoIosArrowDown size="3rem" color="#111" />
+      </div>
+
       <ProductSection
         imageUrl="/tesla-model-s.jpeg"
         titleText="Model S"
@@ -163,15 +164,11 @@ export function ProductsWrapper() {
           <Button
             key="accessories/shop"
             text="SHOP NOW"
-            route="/accessories/shop"
+            route="/shop/accessories"
             className="black"
           />,
         ]}
       />
-
-      <div className={`arrow-down ${onTop ? "on-top" : ""}`}>
-        <IoIosArrowDown size="3rem" color="#111" />
-      </div>
     </Container>
   );
 }

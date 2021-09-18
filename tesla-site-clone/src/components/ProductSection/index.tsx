@@ -1,4 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import { Waypoint } from "react-waypoint";
+
 import { Container } from "./styles";
 
 interface ProductSectionProps {
@@ -14,6 +16,8 @@ export function ProductSection({
   subtitleJSX,
   buttonsJSX,
 }: ProductSectionProps) {
+  const [isNotOnScreen, setIsNotOnScreen] = useState(true);
+
   return (
     <Container
       style={{
@@ -22,12 +26,27 @@ export function ProductSection({
         backgroundImage: `url(${imageUrl})`,
       }}
     >
-      <div className="titles">
+      <div
+        className={`titles ${
+          isNotOnScreen ? "is-not-on-screen" : "is-on-screen"
+        }`}
+      >
         <h1>{titleText}</h1>
         {subtitleJSX}
       </div>
 
-      <div className="buttons">{buttonsJSX}</div>
+      <Waypoint
+        onEnter={() => setIsNotOnScreen(false)}
+        onLeave={() => setIsNotOnScreen(true)}
+      />
+
+      <div
+        className={`buttons ${
+          isNotOnScreen ? "is-not-on-screen" : "is-on-screen"
+        }`}
+      >
+        {buttonsJSX}
+      </div>
     </Container>
   );
 }

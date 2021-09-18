@@ -18,6 +18,16 @@ export const Container = styled.section`
     top: 20%;
 
     text-align: center;
+
+    transition: opacity ease 2s;
+
+    &.is-not-on-screen {
+      opacity: 0;
+    }
+
+    &.is-on-screen {
+      opacity: 1;
+    }
   }
 
   .titles > * + * {
@@ -41,6 +51,16 @@ export const Container = styled.section`
     bottom: 15%;
 
     display: flex;
+
+    transition: opacity ease 3s;
+
+    &.is-not-on-screen {
+      opacity: 0;
+    }
+
+    &.is-on-screen {
+      opacity: 1;
+    }
   }
 
   .buttons > * {

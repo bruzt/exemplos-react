@@ -14,6 +14,8 @@ export const Container = styled.main`
     bottom: 5%;
     left: 48.7%;
 
+    z-index: 90;
+
     display: none;
 
     animation: up-and-down 1s ease infinite;

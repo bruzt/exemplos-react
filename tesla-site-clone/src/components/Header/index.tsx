@@ -6,7 +6,7 @@ import { Container } from "./styles";
 interface HeaderProps {}
 
 export function Header({}: HeaderProps) {
-  function handleHeaderMenu(
+  function handleHeaderNavigation(
     event: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
     route: string
   ) {
@@ -18,12 +18,20 @@ export function Header({}: HeaderProps) {
   return (
     <Container>
       <div className="report-container">
-        <a href="/report">{"Read Tesla's 2020 Impact Report"}</a>
+        <a
+          href="/report"
+          onClick={(event) => handleHeaderNavigation(event, "/report")}
+        >
+          {"Read Tesla's 2020 Impact Report"}
+        </a>
       </div>
 
       <div className="header-container">
         <figure>
-          <a href="/home" onClick={(event) => handleHeaderMenu(event, "/")}>
+          <a
+            href="/home"
+            onClick={(event) => handleHeaderNavigation(event, "/")}
+          >
             <Image
               src="/logo.svg"
               alt="tesla logo"
@@ -37,7 +45,7 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/model-s"
-              onClick={(event) => handleHeaderMenu(event, "/model-s")}
+              onClick={(event) => handleHeaderNavigation(event, "/model-s")}
             >
               Model S
             </a>
@@ -45,7 +53,7 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/model-3"
-              onClick={(event) => handleHeaderMenu(event, "/model-3")}
+              onClick={(event) => handleHeaderNavigation(event, "/model-3")}
             >
               Model 3
             </a>
@@ -53,7 +61,7 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/model-x"
-              onClick={(event) => handleHeaderMenu(event, "/model-x")}
+              onClick={(event) => handleHeaderNavigation(event, "/model-x")}
             >
               Model X
             </a>
@@ -61,23 +69,25 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/model-y"
-              onClick={(event) => handleHeaderMenu(event, "/model-y")}
+              onClick={(event) => handleHeaderNavigation(event, "/model-y")}
             >
               Model Y
             </a>
           </li>
           <li>
             <a
-              href="/solar"
-              onClick={(event) => handleHeaderMenu(event, "/solar-roof")}
+              href="/solar-roof"
+              onClick={(event) => handleHeaderNavigation(event, "/solar-roof")}
             >
               Solar Roof
             </a>
           </li>
           <li>
             <a
-              href="/models"
-              onClick={(event) => handleHeaderMenu(event, "/solar-panels")}
+              href="/solar-panels"
+              onClick={(event) =>
+                handleHeaderNavigation(event, "/solar-panels")
+              }
             >
               Solar Panels
             </a>
@@ -88,15 +98,15 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/shop"
-              onClick={(event) => handleHeaderMenu(event, "/shop")}
+              onClick={(event) => handleHeaderNavigation(event, "/shop")}
             >
               Shop
             </a>
           </li>
           <li>
             <a
-              href="/accout"
-              onClick={(event) => handleHeaderMenu(event, "/accout")}
+              href="/account"
+              onClick={(event) => handleHeaderNavigation(event, "/account")}
             >
               Account
             </a>
@@ -104,7 +114,7 @@ export function Header({}: HeaderProps) {
           <li>
             <a
               href="/menu"
-              onClick={(event) => handleHeaderMenu(event, "/menu")}
+              onClick={(event) => handleHeaderNavigation(event, "/menu")}
             >
               Menu
             </a>
