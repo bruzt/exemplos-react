@@ -12,18 +12,16 @@ export const Container = styled.main`
   .arrow-down {
     position: fixed;
     bottom: 5%;
-    left: 48.7%;
+    left: 48.75%;
 
     z-index: 90;
 
-    //display: none;
     opacity: 0;
     transition: opacity ease 1s;
 
     animation: up-and-down 1s ease infinite;
 
     &.on-top {
-      //display: block;
       opacity: 1;
     }
   }
