@@ -5,6 +5,7 @@ import { ProductSection } from "../ProductSection";
 import { CarsSubtitle } from "../CarsSubtitle";
 import { Button } from "../Button";
 import { Container } from "./styles";
+import { Footer } from "../Footer";
 
 export function ProductsWrapper() {
   const [onTop, setOnTop] = useState(true);
@@ -169,6 +170,8 @@ export function ProductsWrapper() {
           />,
         ]}
       />
+
+      <Footer />
     </Container>
   );
 }
