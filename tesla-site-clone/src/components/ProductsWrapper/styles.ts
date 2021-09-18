@@ -16,12 +16,15 @@ export const Container = styled.main`
 
     z-index: 90;
 
-    display: none;
+    //display: none;
+    opacity: 0;
+    transition: opacity ease 1s;
 
     animation: up-and-down 1s ease infinite;
 
     &.on-top {
-      display: block;
+      //display: block;
+      opacity: 1;
     }
   }
 
