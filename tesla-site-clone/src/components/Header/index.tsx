@@ -1,5 +1,6 @@
 import { MouseEvent } from "react";
 import Image from "next/image";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import { Container } from "./styles";
 
@@ -120,6 +121,10 @@ export function Header({}: HeaderProps) {
             </a>
           </li>
         </ul>
+
+        <button type="button" className="mobile-menu">
+          <GiHamburgerMenu size="1.5rem" color="#111" />
+        </button>
       </div>
     </Container>
   );

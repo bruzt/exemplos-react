@@ -12,7 +12,7 @@ export const Container = styled.main`
   .arrow-down {
     position: fixed;
     bottom: 5%;
-    left: 48.75%;
+    left: 50%;
 
     z-index: 90;
 
@@ -28,15 +28,15 @@ export const Container = styled.main`
 
   @keyframes up-and-down {
     0% {
-      transform: translateY(-0.2rem);
+      transform: translate(-50%, -0.2rem);
     }
 
     50% {
-      transform: translateY(0.2rem);
+      transform: translate(-50%, 0.2rem);
     }
 
     100% {
-      transform: translateY(-0.2rem);
+      transform: translate(-50%, -0.2rem);
     }
   }
 `;

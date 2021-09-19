@@ -65,4 +65,23 @@ export const Container = styled.header`
       background: rgba(9, 9, 9, 0.05);
     }
   }
+
+  .header-container .mobile-menu {
+    display: none;
+
+    font-size: 0;
+
+    background: transparent;
+    border: 0;
+  }
+
+  @media (max-width: 1000px) {
+    .header-container ul {
+      display: none;
+    }
+
+    .header-container .mobile-menu {
+      display: block;
+    }
+  }
 `;

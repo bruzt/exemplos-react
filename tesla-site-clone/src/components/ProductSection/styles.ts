@@ -90,4 +90,15 @@ export const Container = styled.section`
     background: rgba(238, 238, 238, 0.8);
     color: #111;
   }
+
+  @media (max-width: 500px) {
+    .buttons {
+      flex-direction: column;
+    }
+
+    .buttons > * + * {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
 `;
