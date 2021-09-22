@@ -136,7 +136,7 @@ export interface ITMDBListResponse {
 
 const apiParams = {
   language: "pt-BR",
-  api_key: process.env.TMDB_API_KEY,
+  api_key: process.env.TMDB_API_KEY || "ed3f73df53336c50d55120cfc80f47ab",
 };
 
 const api = axios.create({
