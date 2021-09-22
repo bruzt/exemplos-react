@@ -5,12 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "next:start": "next start",
+    "start": "npm-run-all build next:start",
     "lint": "next lint"
   },
   "dependencies": {
     "axios": "^0.21.4",
     "next": "11.1.2",
+    "npm-run-all": "^4.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
