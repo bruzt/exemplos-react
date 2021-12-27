@@ -1,3 +1,5 @@
+import { ContatoPage } from "../components/ContatoPage";
+
 export default function contato() {
-  return <h1>Contato</h1>;
+  return <ContatoPage />;
 }
